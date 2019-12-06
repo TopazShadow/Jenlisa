@@ -1,0 +1,20 @@
+
+public class scoreboard { //written by Eric
+int coins = 100;
+int gameover = 0;
+int streak;
+int multiplier;
+boolean translate = (coins == 100);
+boolean ggez = (gameover == 0);
+
+public void multiplier() {
+	if (translate = ggez) {
+		System.exit(0);
+	}
+	for (int i = 0; i >= 3; i++) {
+		streak = i;
+		//bet * 2 = payout
+	}
+}
+	EZImage koins = EZ.addImage("coins.png", 1930/2, 1800/2);
+}
