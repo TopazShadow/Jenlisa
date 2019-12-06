@@ -1,0 +1,11 @@
+
+public class Slots {
+
+	// Declare a variable called Icons of type EZImage
+	private EZImage picIcons;
+	
+	// Constructor for Slots
+	public Slots(String filename, int x, int y) {
+		picIcons = EZ.addImage(filename, x, y);
+	}
+}
