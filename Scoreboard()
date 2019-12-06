@@ -7,12 +7,12 @@ int multiplier;
 boolean translate = (coins == 100);
 boolean ggez = (gameover == 0);
 
-public void multiplier() {
+public void multiplier() { //a function called multiplier
 	if (translate = ggez) {
-		System.exit(0);
+		System.exit(0); //ends the game when the coins you have is 0. 
 	}
 	for (int i = 0; i >= 3; i++) {
-		streak = i;
+		streak = i; //after 3 wins in a row, you get double the earn out
 		//bet * 2 = payout
 	}
 }
