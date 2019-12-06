@@ -1,0 +1,317 @@
+import java.awt.Color; // Allows to colors to be used from RGB
+import java.util.Random; // Needed to make the random number generator work
+import java.util.*;
+
+public class SlotMachineMain {
+
+	// Pass off responsibility for error checking
+	public static void main(String[] args) throws java.io.IOException {
+		// TODO Auto-generated method stub
+
+		// Setup EZ graphics system creating a window of size (1920,1080)
+		EZ.initialize(1920, 1080);
+
+		// Set the background color to light gray
+		EZ.setBackgroundColor(new Color(220, 220, 220));
+
+		final int row = 3; // Make a grid 3 wide
+		final int column = 3; // By 3 tall
+
+		Random rg = new Random(); // Make a random number generator
+
+		int[][] numGrid = new int[row][column]; // Make a 2D array using the specified size
+		ArrayList<Integer> al = new ArrayList<Integer>(); // Make an ArrayList to put the 2D array in
+
+		for (int width = 0; width < row; width++) { // Fill the grid
+
+			for (int height = 0; height < column; height++) {
+
+				numGrid[width][height] = rg.nextInt(7); // Assign random numbers between 0-7 to the grids
+				al.add(numGrid[width][height]);
+				System.out.println(al);
+				System.out.println("Size of al after additions: " + al.size());
+
+			}
+		}
+
+		for (int a = 0; a < 9; a++) {
+
+			System.out.println(al.get(a));
+		}
+
+		for (int i = 0; i < row; i++) { // Display the output in a 3x3 matrix
+
+			for (int j = 0; j < column; j++) {
+
+				System.out.print(numGrid[i][j] + " "); // Don't use System.out.println(); here
+
+			}
+			System.out.println();
+
+		}
+
+		int picGrid[][] = new int[3][3]; // Creates a second 2D array that is also 3x3 in size
+		picGrid[0][0] = al.get(0); //Gets the value in 1x1 of the 2D array
+		picGrid[1][0] = al.get(1); //Gets the value in 2x1
+		picGrid[2][0] = al.get(2); //Gets the value in 3x1
+		picGrid[0][1] = al.get(3); //Gets the value in 1x2
+		picGrid[1][1] = al.get(4); //Gets the value in 2x2
+		picGrid[2][1] = al.get(5); //Gets the value in 3x2
+		picGrid[0][2] = al.get(6); //Gets the value in 1x3
+		picGrid[1][2] = al.get(7); //Gets the value in 2x3
+		picGrid[2][2] = al.get(8); //Gets the value in 3x3
+
+		switch (picGrid[0][0]) {	// Create a switch for picGrid[0][0]
+		case 0:
+			EZ.addImage("icon1.png", 200, 200); // If the value in picGrid[0][0] is 0, display an apple
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 200, 200);	// If the value in picGrid[0][0] is 1, display a grape
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 200, 200); // If the value in picGrid[0][0] is 2, display a melon
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 200, 200); // If the value in picGrid[0][0] is 3, display a lemon
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 200, 200); // If the value in picGrid[0][0] is 4, display an orange
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 200, 200); // If the value in picGrid[0][0] is 5, display a cherry
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 200, 200); // If the value in picGrid[0][0] is 6, display a jackpot
+			break;
+		default:
+			System.out.println("error1"); // Else error
+		}
+
+		switch (picGrid[1][0]) {
+		case 0:
+			EZ.addImage("icon1.png", 400, 200);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 400, 200);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 400, 200);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 400, 200);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 400, 200);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 400, 200);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 400, 200);
+			break;
+		default:
+			System.out.println("error2");
+		}
+
+		switch (picGrid[2][0]) {
+		case 0:
+			EZ.addImage("icon1.png", 600, 200);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 600, 200);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 600, 200);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 600, 200);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 600, 200);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 600, 200);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 600, 200);
+			break;
+		default:
+			System.out.println("error3");
+		}
+
+		switch (picGrid[0][1]) {
+		case 0:
+			EZ.addImage("icon1.png", 200, 400);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 200, 400);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 200, 400);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 200, 400);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 200, 400);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 200, 400);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 200, 400);
+			break;
+		default:
+			System.out.println("error4");
+		}
+
+		switch (picGrid[1][1]) {
+		case 0:
+			EZ.addImage("icon1.png", 400, 400);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 400, 400);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 400, 400);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 400, 400);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 400, 400);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 400, 400);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 400, 400);
+			break;
+		default:
+			System.out.println("error5");
+		}
+
+		switch (picGrid[2][1]) {
+		case 0:
+			EZ.addImage("icon1.png", 600, 400);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 600, 400);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 600, 400);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 600, 400);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 600, 400);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 600, 400);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 600, 400);
+			break;
+		default:
+			System.out.println("error6");
+		}
+
+		switch (picGrid[0][2]) {
+		case 0:
+			EZ.addImage("icon1.png", 200, 600);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 200, 600);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 200, 600);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 200, 600);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 200, 600);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 200, 600);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 200, 600);
+			break;
+		default:
+			System.out.println("error7");
+		}
+
+		switch (picGrid[1][2]) {
+		case 0:
+			EZ.addImage("icon1.png", 400, 600);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 400, 600);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 400, 600);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 400, 600);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 400, 600);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 400, 600);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 400, 600);
+			break;
+		default:
+			System.out.println("error8");
+		}
+
+		switch (picGrid[2][2]) {
+		case 0:
+			EZ.addImage("icon1.png", 600, 600);
+			break;
+		case 1:
+			EZ.addImage("icon2.png", 600, 600);
+			break;
+		case 2:
+			EZ.addImage("icon3.png", 600, 600);
+			break;
+		case 3:
+			EZ.addImage("icon4.png", 600, 600);
+			break;
+		case 4:
+			EZ.addImage("icon5.png", 600, 600);
+			break;
+		case 5:
+			EZ.addImage("icon6.png", 600, 600);
+			break;
+		case 6:
+			EZ.addImage("icon7.png", 600, 600);
+			break;
+		default:
+			System.out.println("error9");
+		}
+		
+		// Detects if there is a 3 in a row of the same symbol in any row or column of the 2D array
+		if (picGrid[0][0] == picGrid[1][0] && picGrid[0][0] == picGrid[2][0] && picGrid[1][0] == picGrid[2][0]) {
+			System.out.println("Winner row 1!");
+		} else if (picGrid[0][1] == picGrid[1][1] && picGrid[0][1] == picGrid[2][1] && picGrid[1][1] == picGrid[2][1]) {
+			System.out.println("Winner row 2!");
+		} else if (picGrid[0][2] == picGrid[1][2] && picGrid[0][2] == picGrid[2][2] && picGrid[1][2] == picGrid[2][2]) {
+			System.out.println("Winner row 3!");
+		} else if (picGrid[0][0] == picGrid[0][1] && picGrid[0][0] == picGrid[0][2] && picGrid[0][1] == picGrid[0][2]) {
+			System.out.println("Winner column 1!");
+		} else if (picGrid[1][0] == picGrid[1][1] && picGrid[1][0] == picGrid[1][2] && picGrid[1][1] == picGrid[1][2]) {
+			System.out.println("Winner column 2!");
+		} else if (picGrid[2][0] == picGrid[2][1] && picGrid[2][0] == picGrid[2][2] && picGrid[2][1] == picGrid[2][2]) {
+			System.out.println("Winner column 3!");
+		} else {
+			System.out.println("error!");
+		}
+
+	}
+
+}
