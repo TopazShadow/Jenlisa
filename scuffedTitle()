@@ -4,9 +4,6 @@ public class title { //written by eric
 		EZ.initialize(1920,1800); //inititalized a screen of 1024x700
 		EZ.setBackgroundColor(new Color(51,204,51)); //set color to green
 	EZImage title =	EZ.addImage("title.png", 1930/2, 700/2);
-	int scaledWidth, scaledHeight;
-	int originalWidth = title.getIconWidth();
-	int originalHeight = title.getIconHeight();
-	float imageRatio = int title (500/500);
+	
 	}
 }
